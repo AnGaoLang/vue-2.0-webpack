@@ -73,7 +73,9 @@ exports.cssLoaders = function (options) {
         // fallback这个选项我们可以这样理解
         // webpack默认会按照loaders中的加载器从右向左调用编译各种css类型文件。如果一切顺利，在loaders中的
         // 各个加载器运行结束之后就会把css文件导入到规定的文件中去，如果不顺利，则继续使用vue-style-loader来处理css文件
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        // 针对在css中引入的文件(图片或字体文件)url的服务器上的相对路径的配置
+        publicPath: '../../'
       })
     } else {
        // 如果没有提取行为，则最后再使用vue-style-loader处理css
