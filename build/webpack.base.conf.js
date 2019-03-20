@@ -78,6 +78,11 @@ const webpackConfig = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')] // 包含哪些目录下的文件
       },
+      // 配置sass：npm install sass-loader node-sass --save-dev 之后，在下面添加sass的处理规则
+      // {
+      //   test: /\.sass$/,
+      //   loaders: ['style', 'css', 'sass']
+      // },
       {
         // 对图片资源进行编译的配置，指定文件的类型
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, // 文件匹配正则表达式
