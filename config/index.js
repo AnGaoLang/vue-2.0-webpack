@@ -80,7 +80,10 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'), // 编译生成的文件的目录
     assetsSubDirectory: 'static', // 编译生成的静态文件的目录
-    assetsPublicPath: '/',  // 编译发布的根目录，可配置为资源服务器域名或者cdn域名
+    // 编译发布的静态资源引用的公共路径，自动替换项目中引用的静态资源的相对路径
+    // 最后打包后项目静态资源的引用路径将会自动替换为：output.publicPath + 资源loader或插件等配置路径
+    // 可配置为资源服务器域名或者cdn域名
+    assetsPublicPath: '/', 
 
     /**
      * Source Maps
