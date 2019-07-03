@@ -4,7 +4,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const vuxLoader = require('vux-loader')
+// const vuxLoader = require('vux-loader')
 
 // 生成相对于根目录的绝对路径
 function resolve (dir) {
@@ -133,6 +133,6 @@ const webpackConfig = {
 };
 
 // 引入vux的相关插件，与基础webpackConfig合并
-module.exports =vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'duplicate-style']
-});
+// module.exports =vuxLoader.merge(webpackConfig, {
+//   plugins: ['vux-ui', 'duplicate-style']
+// });
