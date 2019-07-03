@@ -4,7 +4,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-// const vuxLoader = require('vux-loader')
 
 // 生成相对于根目录的绝对路径
 function resolve (dir) {
@@ -24,7 +23,7 @@ const createLintingRule = () => ({
 })
 
 // 下面就是webpack基本的配置信息（可以立即成是开发环境和生产环境公共的配置）
-const webpackConfig = {
+module.exports = {
   
   // webpack解析文件时候的根目录(如果把webpack.config.js)放在了项目的根目录下面，这个配置可以省略
   context: path.resolve(__dirname, '../'),
@@ -131,8 +130,3 @@ const webpackConfig = {
     child_process: 'empty'
   }
 };
-
-// 引入vux的相关插件，与基础webpackConfig合并
-// module.exports =vuxLoader.merge(webpackConfig, {
-//   plugins: ['vux-ui', 'duplicate-style']
-// });
