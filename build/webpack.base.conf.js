@@ -112,6 +112,21 @@ module.exports = {
     ]
   },
 
+  // 打包时将下列依赖移除不打包进vendor,改为在index.html引入(cdn)
+  // externals: {
+  //     jquery: 'jQuery', // 后面的 jQuery 为路径别名
+  //     // String
+  //     react: 'react'
+  // },
+
+  // 依赖提供插件，无需使用import引入，这里就直接提供了全局的依赖
+  // plugins: [
+  //   new webpack.ProvidePlugin({
+  //     _: 'lodash',
+  //     moment: 'moment',
+  //   })
+  // ],
+
   // 这些选项用于配置polyfill或mock某些node.js全局变量和模块。
   // 这可以使最初为nodejs编写的代码可以在浏览器端运行
   // 这个配置是一个对象，其中的每个属性都是nodejs全局变量或模块的名称

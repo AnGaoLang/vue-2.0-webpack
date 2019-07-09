@@ -141,10 +141,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
+          /\.js$/.test(module.resource) && // 正则匹配路径，是否为js文件
+          module.resource.indexOf( // 路径中包含 node_modules 的绝对路径，即在 node_modules  目录下
             path.join(__dirname, '../node_modules')
-          ) === 0
+          ) === 0 
+          // && module.resource.indexOf(path.join(__dirname, '../lib')) === 0 // 也可自定义目录
         )
       }
     }),
